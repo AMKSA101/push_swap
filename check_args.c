@@ -6,7 +6,7 @@
 /*   By: abamksa <abamksa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 11:07:37 by abamksa           #+#    #+#             */
-/*   Updated: 2024/06/09 20:27:10 by abamksa          ###   ########.fr       */
+/*   Updated: 2024/06/10 09:26:30 by abamksa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ long	ft_clean(char **av, const char *nptr, int *arr, long long res)
 		if ((*nptr < '0' && *nptr > '9'))
 			ft_error(av, arr);
 		res = res * 10 + (*nptr - 48);
+		if (res > 2147483648)
+			ft_error(av, arr);
 		++nptr;
 	}
 	while ((*nptr >= '\t' && *nptr <= '\r') || (*nptr == ' '))
