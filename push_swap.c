@@ -6,7 +6,7 @@
 /*   By: abamksa <abamksa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 09:22:42 by abamksa           #+#    #+#             */
-/*   Updated: 2024/06/06 09:29:06 by abamksa          ###   ########.fr       */
+/*   Updated: 2024/06/11 19:40:11 by abamksa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,8 @@ void	check_space(char **av)
 	while (av[i])
 	{
 		j = 0;
+		if (!av[i][j])
+			error_message();
 		while (av[i][j])
 		{
 			if (av[i][j] != ' ' && !(av[i][j] >= 9 && av[i][j] <= 13))
